@@ -12,9 +12,17 @@ app.get('/', function(req, res){
 	});
 });
 
-app.get('/test', function(req, res){
-	res.render('test');
+// Volunteer App
+app.get('/volunteer', function(req, res){
+	res.render('volunteer');
 });
+
+// Caseworker App
+app.get('/dashboard', function(req, res){
+	res.render('dashboard');
+});
+
+
 
 app.use('/public', express.static('public'));
 
