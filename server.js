@@ -77,7 +77,6 @@ app.get('/volunteer', function(req, res){
 	});
 });
 
-// Volunteer App
 app.get('/ride', function(req, res){
 	res.render('ride', {
 		ride: storage["rides"][req.query.id]
@@ -106,8 +105,11 @@ app.post('/cancelRide', function(req, res) {
 
 
 // Caseworker App
-app.get('/dashboard', function(req, res){
-	res.render('dashboard');
+
+app.get('/caseworker', function(req, res){
+	res.render('caseworker', {
+		rides: storage["rides"]
+	});
 });
 
 
