@@ -55,10 +55,22 @@
                 </div>
               </div>
               <div class="row card-action">
-                <a class="accept-ride-btn" href="#"><div class="col s6 card-action-button card-action-primary-button">ACCEPT</div></a>
+                <a id="card-accept-ride-btn" class="modal-trigger" value={{@key}} href="#accept-modal"><div class="col s6 card-action-button card-action-primary-button">ACCEPT</div></a>
                 <a class="details-btn" href="/ride?id={{@key}}"><div class="col s6 card-action-button card-action-secondary-button">DETAILS</div></a>
               </div>
             </div>
+          </div>
+        </div>
+
+        <!-- Modal Structure -->
+        <div id="accept-modal" class="modal">
+          <div class="modal-content accept-ride-modal">
+            <div class="profile-img-wrapper"><img class="profile-image" src={{this.clientImage}}></div>
+            <p class="profile-name">{{this.clientName}}</p>
+            <p class="accept-ride-modal-description">You're picking up {{this.clientName}} on <span class="medium">{{this.month}} {{this.date}} at {{this.pickupTime}} {{this.pickup}} in {{this.pickupLocationCity}}</span>!</p>
+          </div>
+          <div class="modal-footer accept-ride-modal-footer">
+            <a href="/ride?id={{@key}}" class="modal-action modal-close waves-effect waves-green btn-flat">VIEW RIDE</a>
           </div>
         </div>
       {{/unless}}

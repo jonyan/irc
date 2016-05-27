@@ -29,7 +29,34 @@ $(document).ready(function() {
 	  };
 	});
 
-         
+	$('#card-accept-ride-btn').click(function(e) {
+		e.preventDefault();
+		var rideID = $('#card-accept-ride-btn').attr('value');
+		var data = { id : rideID };
+
+		var url = "/acceptRide";
+		// construct an HTTP request
+	  var xhr = new XMLHttpRequest();
+	  xhr.open("POST", url, true);
+	  xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+
+	  // send the collected data as JSON
+	  xhr.send(JSON.stringify(data));
+
+	  xhr.onloadend = function () {
+	    var status = xhr.status;
+	    if (status == 200) {
+	    	//success
+	    	// window.location.href = 'volunteer#upcomingRides';
+	    } else {
+	    	alert('failure');
+	    }
+	  };
+ 
+
+	});
+
+
 
 	$('#accept-ride-btn').click(function(e) {
 		e.preventDefault();
