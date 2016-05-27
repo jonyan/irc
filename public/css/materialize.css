@@ -5227,7 +5227,7 @@ a.waves-effect .waves-ripple {
   width: 55%;
   margin: auto;
   overflow-y: auto;
-  border-radius: 2px;
+  border-radius: 6px;
   will-change: top, opacity;
 }
 
@@ -5250,8 +5250,8 @@ a.waves-effect .waves-ripple {
 }
 
 .modal .modal-footer {
-  border-radius: 0 0 2px 2px;
-  background-color: #fafafa;
+  border-radius: 0 0 6px 6px;
+  background-color: #FAC94B;
   padding: 4px 6px;
   height: 56px;
   width: 100%;

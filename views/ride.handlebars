@@ -1,0 +1,211 @@
+<div id="ride-page">
+	<nav>
+	  <div class="nav-wrapper">
+	    <a href="#" class="nav-header">{{ride.month}} {{ride.date}} at {{ride.pickupTime}} {{ride.pickupTimeMeridian}}</a>
+	    <ul id="nav-mobile" class="left">
+	      <li><a href="/volunteer"><i class="material-icons">arrow_back</i></a></li>
+	    </ul>
+	  </div>
+	</nav>
+	{{!-- <div class="row"> --}}
+	{{#if ride.accepted}}
+		<div class="profile-container">
+			<div class="profile-img-wrapper"><img class="profile-image" src={{ride.clientImage}}></div>
+			<p class="profile-name remove-top-bottom-margin">{{ride.clientName}}</p>
+			<p class="remove-top-bottom-margin">{{ride.clientPhone}}</p>
+		</div>
+		<div class="ride-details-container">
+			<div class="padding-lg">
+				<h5 class="medium">{{ride.rideTitle}}</h5>
+				<p class="ride-details-date-label">{{ride.month}} {{ride.date}} at {{ride.pickupTime}} {{ride.pickupTimeMeridian}}</p>
+			</div>
+			<div class="padding-sm">
+				<div class="divider"></div>
+			</div>
+			<div class="padding-lg">
+				<div class="ride-details-icons-container">
+					<div class="ride-details-icon-text-container">
+						<i class="material-icons">watch_later</i>
+						<p class="no-margin-bottom">{{ride.duration}} Hours</p>
+					</div>
+					<div class="ride-details-icon-text-container">
+						<i class="material-icons">place</i>
+						<p class="no-margin-bottom">{{ride.rideDistance}} Miles</p>
+					</div>
+					<div class="ride-details-icon-text-container">
+						<i class="material-icons">supervisor_account</i>
+						<p class="no-margin-bottom">{{ride.assistance}}</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="padding-sm">
+				<div class="divider"></div>
+			</div>
+
+			<div class="padding-lg">
+				<p class="calendar-availability"><span class="medium">{{ride.month}} {{ride.date}} from {{ride.pickupTime}} {{ride.pickupTimeMeridian}} to {{ride.endTime}} {{ride.endTimeMeridian}}.</span> Your calendar says you're available.</p>
+				<a class="view-calendar-btn" href="">VIEW CALENDAR</a>
+			</div>
+			
+			<div class="padding-sm">
+				<div class="divider"></div>
+			</div>
+
+			<div class="padding-lg">
+				<div class="row">
+	      	<div class="col s11 push-s1">
+	        	<span class="card-location-label">PICKUP LOCATION</span>
+	        	<p class="card-location"><span style="text-align: left;">San Jose</span><span class="time-float-right">3:30pm</span></p>
+	        	<p class="secondary-text">1210 S Bascom Ave, San Jose</p>
+	        </div>
+
+	      	<div class="col s1 pull-s11">
+	      		<div class="circle"></div>
+	      		<div class="dotted-vert-line"></div>
+	      	</div>
+	      </div>
+
+	      <div class="row">
+	      	<div class="col s11 push-s1">
+	        	<span class="card-location-label">DROPOFF LOCATION</span>
+	        	<p class="card-location"><span style="text-align: left;">San Jose</span><span class="time-float-right">4:00pm</span></p>
+	        	<p class="secondary-text">333 W Julian St, Palo Alto</p>
+	        </div>
+
+	      	<div class="col s1 pull-s11">
+	      		<div class="circle"></div>
+	      	</div>
+	      </div>
+			</div>
+
+			<div class="padding-sm">
+				<div class="divider"></div>
+			</div>
+
+			<div class="padding-lg">
+				<p class="ride-details-assistance-header">{{ride.assistance}} Required</p>
+				<p class="ride-details-assistance-description">{{ride.assistanceDescription}}</p>
+			</div>
+
+			<!-- Modal Structure -->
+			<div id="cancel-modal" class="modal">
+			  <div class="modal-content accept-ride-modal">
+			  	<div class="profile-img-wrapper"><img class="profile-image" src={{ride.clientImage}}></div>
+					<p class="profile-name">{{ride.clientName}}</p>
+			    <p class="accept-ride-modal-description">Are you sure you want to cancel this ride for Eduardo?</p>
+			  </div>
+			  <div class="modal-footer cancel-ride-modal-footer">
+			  	<div class="modal-primary-btn modal-btn modal-action modal-close"><span>DO NOT CANCEL</span></div>
+			  	<div class="modal-secondary-btn modal-btn" id="cancel-ride-btn"><span>CANCEL RIDE</span></div>
+			    {{!-- <a href="/volunteer#upcomingRides" class="modal-action modal-close waves-effect waves-green btn-flat">VIEW RIDE</a> --}}
+			  </div>
+			</div>
+			<div class="clear-button"></div>
+			<button class="modal-trigger" data-target="cancel-modal"><div class="cancel-ride-floating-button cancel-btn">CANCEL RIDE</div></button>
+		</div>
+	{{else}}
+		<div class="profile-container">
+			<div class="profile-img-wrapper"><img class="profile-image" src={{ride.clientImage}}></div>
+			<p class="profile-name">{{ride.clientName}}</p>
+		</div>
+		<div class="ride-details-container">
+			<div class="padding-lg">
+				<h5 class="medium">{{ride.rideTitle}}</h5>
+				<p class="ride-details-date-label">{{ride.month}} {{ride.date}} at {{ride.pickupTime}} {{ride.pickupTimeMeridian}}</p>
+			</div>
+			<div class="padding-sm">
+				<div class="divider"></div>
+			</div>
+			<div class="padding-lg">
+				<div class="ride-details-icons-container">
+					<div class="ride-details-icon-text-container">
+						<i class="material-icons">watch_later</i>
+						<p class="no-margin-bottom">{{ride.duration}} Hours</p>
+					</div>
+					<div class="ride-details-icon-text-container">
+						<i class="material-icons">place</i>
+						<p class="no-margin-bottom">{{ride.rideDistance}} Miles</p>
+					</div>
+					<div class="ride-details-icon-text-container">
+						<i class="material-icons">supervisor_account</i>
+						<p class="no-margin-bottom">{{ride.assistance}}</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="padding-sm">
+				<div class="divider"></div>
+			</div>
+
+			<div class="padding-lg">
+				<p class="calendar-availability"><span class="medium">{{ride.month}} {{ride.date}} from {{ride.pickupTime}} {{ride.pickupTimeMeridian}} to {{ride.endTime}} {{ride.endTimeMeridian}}.</span> Your calendar says you're available.</p>
+				<a class="view-calendar-btn" href="">VIEW CALENDAR</a>
+			</div>
+			
+			<div class="padding-sm">
+				<div class="divider"></div>
+			</div>
+
+			<div class="padding-lg">
+				<div class="row">
+	      	<div class="col s11 push-s1">
+	        	<span class="card-location-label">PICKUP LOCATION</span>
+	        	<p class="card-location"><span style="text-align: left;">San Jose</span><span class="time-float-right">3:30pm</span></p>
+	        	<p class="secondary-text">1210 S Bascom Ave, San Jose</p>
+	        </div>
+
+	      	<div class="col s1 pull-s11">
+	      		<div class="circle"></div>
+	      		<div class="dotted-vert-line"></div>
+	      	</div>
+	      </div>
+
+	      <div class="row">
+	      	<div class="col s11 push-s1">
+	        	<span class="card-location-label">DROPOFF LOCATION</span>
+	        	<p class="card-location"><span style="text-align: left;">San Jose</span><span class="time-float-right">4:00pm</span></p>
+	        	<p class="secondary-text">333 W Julian St, Palo Alto</p>
+	        </div>
+
+	      	<div class="col s1 pull-s11">
+	      		<div class="circle"></div>
+	      	</div>
+	      </div>
+			</div>
+
+			<div class="padding-sm">
+				<div class="divider"></div>
+			</div>
+
+			<div class="padding-lg">
+				<p class="ride-details-assistance-header">{{ride.assistance}} Required</p>
+				<p class="ride-details-assistance-description">{{ride.assistanceDescription}}</p>
+			</div>
+
+			<!-- Modal Structure -->
+			<div id="accept-modal" class="modal">
+			  <div class="modal-content accept-ride-modal">
+			  	<div class="profile-img-wrapper"><img class="profile-image" src={{ride.clientImage}}></div>
+					<p class="profile-name">{{ride.clientName}}</p>
+			    <p class="accept-ride-modal-description">You're picking up {{ride.clientName}} on <span class="medium">{{ride.month}} {{ride.date}} at {{ride.pickupTime}} {{ride.pickup}} in {{ride.pickupLocationCity}}</span>!</p>
+			  </div>
+			  <div class="modal-footer accept-ride-modal-footer">
+			    <a href="/volunteer#upcomingRides" class="modal-action modal-close waves-effect waves-green btn-flat">VIEW RIDE</a>
+			  </div>
+			</div>
+
+			<div class="clear-button"></div>
+			<button id="accept-ride-btn" class="modal-trigger" data-target="accept-modal"><div class="accept-ride-floating-button accept-btn">ACCEPT</div></button>
+		</div>
+	{{/if}}
+	{{!-- </div> --}}
+</div>
+<!-- {{#each ride}}
+<p>{{@key}}. {{this}}</p>
+
+{{/each}}
+
+<img src={{ride.clientImage}}>
+
+ -->
