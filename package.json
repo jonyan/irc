@@ -11,6 +11,7 @@
   "dependencies": {
     "express": "^4.13.4",
     "express3-handlebars": "^0.5.2",
-    "body-parser": "1.15.1"
+    "body-parser": "1.15.1",
+    "materialize-css": "0.97.6"
   }
 }
