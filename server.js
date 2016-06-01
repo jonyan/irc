@@ -26,7 +26,7 @@ storage = {"rides" :
 								"rideTitle" : "Social Services Appointment",
 								"clientName" : "Ahmed Ali",
 								"clientPhone" : "(415) 343-2086",
-								"clientImage" : "/public/assets/ahmed.jpg",
+								"clientImage" : "/public/assets/ahmed.png",
 								"rideDistance" : "6",
 								"assistance" : "Assistance",
 								"riderAvailable" : "true",
